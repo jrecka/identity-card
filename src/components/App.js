@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 // import './App.css';
+import IdForm from './IdForm';
 
 class App extends Component {
   render() {
     return (
-      <div>hello</div>
+      <IdForm/>
     );
   }
 }
