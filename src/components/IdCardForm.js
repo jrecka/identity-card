@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './style/main.css'
 
-class IdForm extends React.Component{
+class IdCardForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -30,6 +30,7 @@ class IdForm extends React.Component{
             placeOfApplication: '',
          }
     }
+
     showTextarea = () => {
 
         let textarea = document.querySelector('textarea'),
@@ -46,6 +47,33 @@ class IdForm extends React.Component{
             [event.target.name]: event.target.value
         })
         this.showTextarea();
+    }
+    showData = () => {
+        const completedApplication = {
+            socialSecurityNumber: this.state.socialSecurityNumber,
+            name: this.state.name,
+            surname: this.state.surname,
+            familyName: this.state.familyName,
+            dateOfBirth: this.state.dateOfBirth,
+            birthplace: this.state.birthplace,
+            nationality: this.state.nationality,
+            gender: this.state.gender,
+            mothersName: this.state.mothersName,
+            fathersName: this.state.fathersName,
+            maidenName: this.state.maidenName,
+            street: this.state.street,
+            houseNumber: this.state.houseNumber,
+            flatNumber: this.state.flatNumber,
+            postalCode: this.state.postalCode,
+            electronicAddress: this.state.electronicAddress,
+            phoneNumber: this.state.phoneNumber,
+            email: this.state.email,
+            reasonOfApplication: this.state.reasonOfApplication,
+            message: this.state.message,
+            dateOfApplication: this.state.dateOfApplication,
+            placeOfApplication: this.state.placeOfApplication,
+        }
+        console.log(completedApplication);
     }
 
 
@@ -204,7 +232,7 @@ class IdForm extends React.Component{
                                 type='text'
                                 value={this.state.street}
                                 className='form-control'
-                                onChange={this.state.handleChange}/>
+                                onChange={this.handleChange}/>
                         </div>
                         <div className='form-group'>
                             <label>
@@ -259,7 +287,7 @@ class IdForm extends React.Component{
                                 type='text'
                                 className='form-control'
                                 name='phoneNumber'
-                                value={this.state.houseNumber}
+                                value={this.state.phoneNumber}
                                 onChange={this.handleChange}/>
                         </div>
                         <div className="form-group">
@@ -290,7 +318,7 @@ class IdForm extends React.Component{
                                 name='message'
                                 value={this.state.message}
                                 onChange={this.handleChange}
-                                className='display-toggle'
+                                className='display-toggle reason-comment'
                                 rows='4'
                                 cols='50'>
                             </textarea>
@@ -312,13 +340,14 @@ class IdForm extends React.Component{
                             </label>
                             <input
                                 className='form-control'
-                                type='text'
+                                type='date'
                                 name='dateOfApplication'
                                 value={this.state.dateOfApplication}
                                 onChange={this.handleChange}/>
                         </div>
                         <div className='row'>
                             <button
+                                onClick={this.showData}
                                 type='submit'
                                 className='btn btn-outline-primary'>
                                 Send
@@ -331,4 +360,4 @@ class IdForm extends React.Component{
     }
 }
 
-export default IdForm;
+export default IdCardForm;
