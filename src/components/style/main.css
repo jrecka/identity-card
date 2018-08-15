@@ -1,3 +1,6 @@
 .caption{
     font-size: 20px;
 }
+.display-toggle{
+    display: none;
+}
