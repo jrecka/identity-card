@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './style/main.css'
+ import './style/index.css'
 
 class IdCardForm extends React.Component{
     constructor(props){
