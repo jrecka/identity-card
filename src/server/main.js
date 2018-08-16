@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
 const app = express();
 app.set('components', path.join(__dirname, 'components'));
-app.set('view engine', 'html');
+// app.set('view engine', );
 app.set(express.static(path.join(__dirname, 'style')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
