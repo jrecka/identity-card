@@ -40,7 +40,10 @@ class IdApplicationForm extends React.Component{
             textarea.classList.add('display-toggle');
         }
     }
+    formSubmit = e =>{
+        e.preventDefault();
 
+    }
     handleChange = event =>{
         this.setState({
             [event.target.name]: event.target.value
@@ -80,7 +83,7 @@ class IdApplicationForm extends React.Component{
         return(
             <div className='container'>
                 <div className='row'>
-                <form className='col-12'>
+                <form className='col-12' onSubmit={this.formSubmit}>
                         <div className='form-group'>
                         <div className='caption'>Personal data</div>
                             <label>

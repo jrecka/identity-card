@@ -1,9 +1,8 @@
 'use strict';
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-
-const IdApplicationFormTypesOfData  = new Schema ({
+var idApplicationFormTypesOfData  = new Schema ({
     socialSecurityNumber: {
         type: String
     },
@@ -72,5 +71,17 @@ const IdApplicationFormTypesOfData  = new Schema ({
     },
     placeOfApplication: {
         type: String
-    }
+    },
+    Created_date: {
+        type: Date,
+        default: Date.now
+      },
+      status: {
+        type: [{
+          type: String,
+          enum: ['pending', 'ongoing', 'completed']
+        }],
+        default: ['pending']
+    },
 });
+module.exports = mongoose.model('IdApplicationForm', idApplicationFormTypesOfData);
