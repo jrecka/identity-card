@@ -1,9 +1,8 @@
-import app from './../../server/main';
-import HomePage from './HomePage';
+import app from '../server/app';
 const router = app.router();
 
 router.get('/', (request, response) => {
-    response.render(HomePage);
+    response.render('home');
 });
 
 module.exports = router;

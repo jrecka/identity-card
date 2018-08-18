@@ -1,7 +1,6 @@
 import React from 'react';
- import './style/index.css'
 
-class IdCardForm extends React.Component{
+class IdApplicationForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -360,4 +359,4 @@ class IdCardForm extends React.Component{
     }
 }
 
-export default IdCardForm;
+export default IdApplicationForm;

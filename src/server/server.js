@@ -1,7 +1,6 @@
-const app = require('./main');
+const http = require('http');
 
-app.set('port', process.env.PORT || 4200);
-
-const server = app.listen(app.get('port'), () => {
-    console.log(`Listening on ${ server.address().port }`);
-});
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end('H World!');
+}).listen(8090);
