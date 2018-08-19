@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
-// import './App.css';
+import {HashRouter, Route, Link, Switch, NavLink} from 'react-router-dom';
+import '../style/main.css';
 import IdApplicationForm from './IdApplicationForm';
+import Home from './Home';
 
 class App extends Component {
   render() {
     return (
-      <IdApplicationForm option={[' ', 'First Id', 'Change of data contained in the Id', 'Id is out of date', 'Id is lost', 'Face image changed', 'Damage of Id', 'Another reason']}/>
+      <div>
+        <HashRouter>
+          <div>
+            <Switch>
+              <Route exact path='/' component={Home}/>
+              <Route path='/idApplicationForm' component={IdApplicationForm}/>
+            </Switch>
+          </div>
+        </HashRouter>
+      </div>
     );
   }
 }

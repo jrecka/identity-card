@@ -1,8 +1,11 @@
 import React from 'react';
+import axios from 'axios';
+
 
 class IdApplicationForm extends React.Component{
     constructor(props){
         super(props);
+        this.option=[' ', 'First Id', 'Change of data contained in the Id', 'Id is out of date', 'Id is lost', 'Face image changed', 'Damage of Id', 'Another reason'];
         this.state = {
             socialSecurityNumber: '',
             name: '',
@@ -25,7 +28,7 @@ class IdApplicationForm extends React.Component{
             email: '',
             reasonOfApplication: '',
             message: '',
-            dateOfApplication:  '',
+            dateOfApplication:  new Date().toISOString().substring(0, 10),
             placeOfApplication: '',
          }
     }
@@ -40,17 +43,15 @@ class IdApplicationForm extends React.Component{
             textarea.classList.add('display-toggle');
         }
     }
-    formSubmit = e =>{
-        e.preventDefault();
-
-    }
+ 
     handleChange = event =>{
         this.setState({
             [event.target.name]: event.target.value
         })
         this.showTextarea();
     }
-    showData = () => {
+    formSubmit = e => {
+        e.preventDefault();
         const completedApplication = {
             socialSecurityNumber: this.state.socialSecurityNumber,
             name: this.state.name,
@@ -75,17 +76,25 @@ class IdApplicationForm extends React.Component{
             dateOfApplication: this.state.dateOfApplication,
             placeOfApplication: this.state.placeOfApplication,
         }
-        console.log(completedApplication);
-    }
+        axios.post('http://localhost:4000/tasks', JSON.stringify(completedApplication)).then(res=>{console.log(res);
+    });
+}
 
 
     render(){
         return(
-            <div className='container'>
+            <div>
+            <div className='container  application-form'>
+            <div>
+                <form onSubmit={this.formSubmit} className='fill-area container' >
+                <div className='row '>
+                <div></div>
+                <div className='col-md-10'>
                 <div className='row'>
-                <form className='col-12' onSubmit={this.formSubmit}>
+                <div className='container'></div>                 
+                   <div className='col-md-5'>
                         <div className='form-group'>
-                        <div className='caption'>Personal data</div>
+                        {/* <div className='caption'>Personal data</div> */}
                             <label>
                                 Social security number
                             </label>
@@ -184,9 +193,9 @@ class IdApplicationForm extends React.Component{
                                     </option>
                             </select>
                         </div>
-                        <div className='caption'>
+                        {/* <div className='caption'>
                             Parents data
-                        </div>
+                        </div> */}
                         <div className='form-group'>
                             <label>
                                 Mother's name
@@ -211,6 +220,9 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.fathersName}>
                             </input>
                         </div>
+                        <div ></div>
+                        </div>
+                        <div className='col-md-5'>
                         <div className='form-group'>
                             <label>
                                 Mother's maiden name
@@ -222,9 +234,9 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}
                                 value={this.state.maidenName}/>
                         </div>
-                        <div className='caption'>
+                        {/* <div className='caption'>
                             Contact
-                        </div>
+                        </div> */}
                         <div className='form-group'>
                             <label>
                                 Street
@@ -314,7 +326,7 @@ class IdApplicationForm extends React.Component{
                                 id='reason'
                                 value={this.state.reasonOfApplication}
                                 onChange={this.handleChange}>
-                                {this.props.option.map((option, i)=> <option key={i} value={option}>{option}</option>)}
+                                {this.option.map((option, i)=> <option key={i} value={option}>{option}</option>)}
                             </select>
                             <textarea
                                 name='message'
@@ -336,7 +348,7 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.placeOfApplication}
                                 onChange={this.handleChange}/>
                         </div>
-                        <div className='form-group'>
+                        {/* <div className='form-group'>
                             <label>
                                 Date 
                             </label>
@@ -346,20 +358,27 @@ class IdApplicationForm extends React.Component{
                                 name='dateOfApplication'
                                 value={this.state.dateOfApplication}
                                 onChange={this.handleChange}/>
+                        </div> */}
                         </div>
-                        <div className='row'>
+                        </div>
+                        </div>
+                        </div>
+    
                             <button
                                 onClick={this.showData}
                                 type='submit'
-                                className='btn btn-outline-primary'>
+                                className='btn btn-secondary submit-possition'>
                                 Send
                             </button>
-                        </div>
                     </form>
-                </div>
+                    </div>
+            </div>
             </div>
         )
     }
 }
 
 export default IdApplicationForm;
+
+
+{/* <IdApplicationForm option={[' ', 'First Id', 'Change of data contained in the Id', 'Id is out of date', 'Id is lost', 'Face image changed', 'Damage of Id', 'Another reason']}/> */}

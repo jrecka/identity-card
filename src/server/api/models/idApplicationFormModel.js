@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var idApplicationFormTypesOfData  = new Schema ({
+
     socialSecurityNumber: {
         type: String
     },
@@ -71,17 +72,6 @@ var idApplicationFormTypesOfData  = new Schema ({
     },
     placeOfApplication: {
         type: String
-    },
-    Created_date: {
-        type: Date,
-        default: Date.now
-      },
-      status: {
-        type: [{
-          type: String,
-          enum: ['pending', 'ongoing', 'completed']
-        }],
-        default: ['pending']
-    },
+    }
 });
 module.exports = mongoose.model('IdApplicationForm', idApplicationFormTypesOfData);
