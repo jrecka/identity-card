@@ -84,14 +84,14 @@ class IdApplicationForm extends React.Component{
     render(){
         return(
             <div>
-            <div className='container  application-form'>
+            <div >
             <div>
-                <form onSubmit={this.formSubmit} className='fill-area container' >
-                <div className='row '>
-                <div></div>
-                <div className='col-md-10'>
+                <form onSubmit={this.formSubmit} className='container' >
                 <div className='row'>
-                <div className='container'></div>                 
+                <div className='col-md-10 fill-area'>
+                <div className='row' > 
+                
+<div className='col-md-1'></div>
                    <div className='col-md-5'>
                         <div className='form-group'>
                         {/* <div className='caption'>Personal data</div> */}
@@ -220,7 +220,6 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.fathersName}>
                             </input>
                         </div>
-                        <div ></div>
                         </div>
                         <div className='col-md-5'>
                         <div className='form-group'>
@@ -318,7 +317,7 @@ class IdApplicationForm extends React.Component{
                         </div>
                         <div className='form-group'>
                             <label>
-                                Reason for submitting the application 
+                                Reason
                             </label>
                             <select 
                                 name='reasonOfApplication'
