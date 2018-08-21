@@ -47,11 +47,11 @@ class IdApplicationForm extends React.Component{
     handleChange = event =>{
         this.setState({
             [event.target.name]: event.target.value
-        })
+        });
         this.showTextarea();
     }
-    formSubmit = e => {
-        e.preventDefault();
+    handleSubmit = event => {
+        event.preventDefault();
         const completedApplication = {
             socialSecurityNumber: this.state.socialSecurityNumber,
             name: this.state.name,
@@ -90,12 +90,10 @@ class IdApplicationForm extends React.Component{
             <div>
             <div >
             <div>
-                <form onSubmit={e => this.formSubmit(e)} className='container' >
+                <form onSubmit={this.handleSubmit} className='container' >
                 <div className= 'fill-area'>
                 <div className='row form-pad' > 
-                
-<div className='col-md-1'></div>
-                   <div className='col-md-5' style={{paddingRight: '2rem'}} >
+                   <div className='col-md-3' >
                         <div className='form-group'>
                         {/* <div className='caption'>Personal data</div> */}
                             <label>
@@ -137,7 +135,7 @@ class IdApplicationForm extends React.Component{
                                 Family name
                             </label>
                           <input
-                             name="familyName"
+                             name='familyName'
                              className='form-control'
                              type='text'
                              onChange={this.handleChange}
@@ -155,8 +153,8 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}
                                 value={this.state.dateOfBirth}>
                             </input>
-                        </div>
-                        <div className='form-group'>
+                            </div>
+                            <div className='form-group'>
                             <label>
                                 Birthplace
                             </label>
@@ -168,6 +166,9 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.birthplace}>
                             </input>
                         </div>
+                        </div>
+                        <div className='col-md-3'>
+                        
                         <div className='form-group'>
                             <label>
                                 Nationality
@@ -223,8 +224,6 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.fathersName}>
                             </input>
                         </div>
-                        </div>
-                        <div className='col-md-5' style={{paddingLeft: '2rem'}}>
                         <div className='form-group'>
                             <label>
                                 Mother's maiden name
@@ -236,6 +235,20 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}
                                 value={this.state.maidenName}/>
                         </div>
+                        <div className="form-group">
+                            <label>
+                                Phone number
+                            </label>
+                            <input
+                                type='text'
+                                className='form-control'
+                                name='phoneNumber'
+                                value={this.state.phoneNumber}
+                                onChange={this.handleChange}/>
+                        </div>
+                        
+                        </div>
+                        <div className='col-md-3'>
                         {/* <div className='caption'>
                             Contact
                         </div> */}
@@ -295,17 +308,9 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.electronicAddress}
                                 onChange={this.handleChange}/>
                         </div>
-                        <div className="form-group">
-                            <label>
-                                Phone number
-                            </label>
-                            <input
-                                type='text'
-                                className='form-control'
-                                name='phoneNumber'
-                                value={this.state.phoneNumber}
-                                onChange={this.handleChange}/>
+                        
                         </div>
+                        <div className='col-md-3'>
                         <div className="form-group">
                             <label>
                                 Email
@@ -317,6 +322,17 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.email}
                                 onChange={this.handleChange}
                             />
+                        </div>
+                        <div className='form-group'>
+                            <label>
+                                City
+                            </label>
+                            <input
+                                className='form-control'
+                                type='text'
+                                name='placeOfApplication'
+                                value={this.state.placeOfApplication}
+                                onChange={this.handleChange}/>
                         </div>
                         <div className='form-group'>
                             <label>
@@ -339,33 +355,9 @@ class IdApplicationForm extends React.Component{
                                 cols='50'>
                             </textarea>
                         </div>
-                        <div className='form-group'>
-                            <label>
-                                City
-                            </label>
-                            <input
-                                className='form-control'
-                                type='text'
-                                name='placeOfApplication'
-                                value={this.state.placeOfApplication}
-                                onChange={this.handleChange}/>
-                        </div>
-                        {/* <div className='form-group'>
-                            <label>
-                                Date 
-                            </label>
-                            <input
-                                className='form-control'
-                                type='date'
-                                name='dateOfApplication'
-                                value={this.state.dateOfApplication}
-                                onChange={this.handleChange}/>
-                        </div> */}
+                    </div>
                         </div>
                         </div>
-                        </div>
-                        
-    
                             <button
                                 onClick={this.showData}
                                 type='submit'

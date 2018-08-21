@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Lora|PT+Serif');
+/* @import url('https://fonts.googleapis.com/css?family=Lora|PT+Serif');
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif; 
+  background-color: #f2f2f3a6;
   font-family: 'PT Serif', serif;
   box-sizing: border-box;
   
@@ -79,4 +80,4 @@ a{
 
 .form-pad{
   padding: 2rem 0 2rem 0;
-}
+} */
