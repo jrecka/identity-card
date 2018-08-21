@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {HashRouter, Route, Link, Switch, NavLink} from 'react-router-dom';
 import '../style/main.css';
-import IdApplicationForm from './IdApplicationForm';
+import IdApplicationForm from './applicationForm/IdApplicationForm';
 import Home from './Home';
 
 

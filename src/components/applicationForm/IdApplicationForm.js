@@ -308,9 +308,6 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.electronicAddress}
                                 onChange={this.handleChange}/>
                         </div>
-                        
-                        </div>
-                        <div className='col-md-3'>
                         <div className="form-group">
                             <label>
                                 Email
@@ -323,6 +320,8 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}
                             />
                         </div>
+                        </div>
+                        <div className='col-md-3'>
                         <div className='form-group'>
                             <label>
                                 City
@@ -357,13 +356,14 @@ class IdApplicationForm extends React.Component{
                         </div>
                     </div>
                         </div>
-                        </div>
+                        
                             <button
                                 onClick={this.showData}
                                 type='submit'
                                 className='btn btn-secondary submit-possition'>
-                                <i class="fas fa-file-export"></i>
+                                <i class="fas fa-file-export"></i> SUBMIT
                             </button>
+                            </div>
                     </form>
                     </div>
             </div>
