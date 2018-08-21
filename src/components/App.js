@@ -4,6 +4,7 @@ import '../style/main.css';
 import IdApplicationForm from './IdApplicationForm';
 import Home from './Home';
 
+
 class App extends Component {
   render() {
     return (

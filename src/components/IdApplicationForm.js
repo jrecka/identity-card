@@ -74,10 +74,14 @@ class IdApplicationForm extends React.Component{
             reasonOfApplication: this.state.reasonOfApplication,
             message: this.state.message,
             dateOfApplication: this.state.dateOfApplication,
-            placeOfApplication: this.state.placeOfApplication,
+            placeOfApplication: this.state.placeOfApplication
         }
-        axios.post('http://localhost:4000/tasks', JSON.stringify(completedApplication)).then(res=>{console.log(res);
-    });
+        console.log("completedApplication", completedApplication);
+        axios.post('http://localhost:4000/tasks', JSON.stringify(completedApplication), {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
 }
 
 
@@ -86,13 +90,12 @@ class IdApplicationForm extends React.Component{
             <div>
             <div >
             <div>
-                <form onSubmit={this.formSubmit} className='container' >
-                <div className='row'>
-                <div className='col-md-10 fill-area'>
-                <div className='row' > 
+                <form onSubmit={e => this.formSubmit(e)} className='container' >
+                <div className= 'fill-area'>
+                <div className='row form-pad' > 
                 
 <div className='col-md-1'></div>
-                   <div className='col-md-5'>
+                   <div className='col-md-5' style={{paddingRight: '2rem'}} >
                         <div className='form-group'>
                         {/* <div className='caption'>Personal data</div> */}
                             <label>
@@ -221,7 +224,7 @@ class IdApplicationForm extends React.Component{
                             </input>
                         </div>
                         </div>
-                        <div className='col-md-5'>
+                        <div className='col-md-5' style={{paddingLeft: '2rem'}}>
                         <div className='form-group'>
                             <label>
                                 Mother's maiden name
@@ -361,13 +364,13 @@ class IdApplicationForm extends React.Component{
                         </div>
                         </div>
                         </div>
-                        </div>
+                        
     
                             <button
                                 onClick={this.showData}
                                 type='submit'
                                 className='btn btn-secondary submit-possition'>
-                                Send
+                                <i class="fas fa-file-export"></i>
                             </button>
                     </form>
                     </div>
@@ -381,3 +384,6 @@ export default IdApplicationForm;
 
 
 {/* <IdApplicationForm option={[' ', 'First Id', 'Change of data contained in the Id', 'Id is out of date', 'Id is lost', 'Face image changed', 'Damage of Id', 'Another reason']}/> */}
+<i class="fas fa-file-export"></i>
+
+
