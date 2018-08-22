@@ -33,22 +33,21 @@ class IdApplicationForm extends React.Component{
          }
     }
 
-    showTextarea = () => {
+    // showTextarea = () => {
 
-        let textarea = document.querySelector('textarea'),
-            selectVal = document.getElementById('reason').value;
-        if( selectVal === "Another reason") {
-            textarea.classList.remove('display-toggle');
-        }else{
-            textarea.classList.add('display-toggle');
-        }
-    }
+    //     let textarea = document.querySelector('textarea'),
+    //         selectVal = document.getElementById('reason').value;
+    //     if( selectVal === "Another reason") {
+    //         textarea.classList.remove('display-toggle');
+    //     }else{
+    //         textarea.classList.add('display-toggle');
+    //     }
+    // }
  
     handleChange = event =>{
         this.setState({
             [event.target.name]: event.target.value
         });
-        this.showTextarea();
     }
     handleSubmit = event => {
         event.preventDefault();
@@ -345,14 +344,23 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}>
                                 {this.option.map((option, i)=> <option key={i} value={option}>{option}</option>)}
                             </select>
-                            <textarea
+                            {this.state.reasonOfApplication === 'Another reason'? <div><textarea 
                                 name='message'
                                 value={this.state.message}
                                 onChange={this.handleChange}
                                 className='display-toggle reason-comment'
                                 rows='4'
                                 cols='50'>
-                            </textarea>
+                            </textarea> <p className='reason'>Add reason of application</p></div> : <textarea  disabled
+                                name='message'
+                                value={this.state.message}
+                                onChange={this.handleChange}
+                                className='display-toggle reason-comment'
+                                rows='4'
+                                cols='50'>
+                            </textarea>}
+                            
+                        
                         </div>
                     </div>
                         </div>

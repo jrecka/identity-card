@@ -1,9 +1,7 @@
 /* .caption{
     font-size: 20px;
   }
-  .display-toggle{
-    display: none;
-  }
+ 
  
   .application-form{
      width: 60vw; 
@@ -33,5 +31,27 @@
     border-radius: 10px;
     padding: 2rem 4rem;
     width: 75rem;
+    box-shadow: 0 0px 11px 1px #6c757d63;
+    border: 1px solid #dddde1;
   }
-  
+  /* .display-toggle{
+    display: none;
+  } */
+  input, textarea, select{
+    box-shadow: inset 0 0 10px #00001c4d;
+  }
+  textarea:disabled{
+    background-color:  #ececec;
+  }
+  p{
+    text-decoration: underline;
+    text-align: center;
+    font-family: lora;
+  }
+  .btn{
+    position: relative;
+    left: 80%;
+    width: 18%;
+    top: -7rem;
+    height: 5rem;
+  }
