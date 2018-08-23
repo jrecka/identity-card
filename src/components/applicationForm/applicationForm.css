@@ -6,37 +6,42 @@
   .application-form{
      width: 60vw; 
   }
-  label{
-     font-size: 20px;
-    margin-bottom: 1rem;
-    margin: 12px 0px 13px 5px; 
-    color: #2d2d2d;
+  
+  */
+  .application-form{
+    padding: 0;
+    margin-top: 4%;
   }
   .submit-position{
-    position: relative;
-    left: 47%;
-  } */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    transform: scale(1.5)
+  } 
+   .form-control{
+     padding:0 2rem;
+   }
+   label{
+    font-size: 20px;
+   color: #2d2d2d;
+   margin-left: 1rem;
+ }
   .reason-comment{
-    margin-top: 1.2rem;
     border-radius: 4px 4px;
     border-color: #ced4da;
     width: 100%;
-  }
-  .container{
-      padding-top: 5%;
-  }
-  
-  .fill-area{ 
-    background-color: #bababa78;
-    border-radius: 10px;
-    padding: 2rem 4rem;
-    width: 75rem;
-    box-shadow: 0 0px 11px 1px #6c757d63;
-    border: 1px solid #dddde1;
-  }
-  /* .display-toggle{
-    display: none;
-  } */
+    margin-top: 1.2rem;
+   
+    }
+    .form-background{ 
+      background-color: #bababa78;
+      border-radius: 10px;
+      box-shadow: 0 0px 11px 1px #6c757d63;
+      border: 1px solid #dddde1;
+    }
+  .display-toggle{
+    display: none;}
   input, textarea, select{
     box-shadow: inset 0 0 10px #00001c4d;
   }
@@ -48,10 +53,6 @@
     text-align: center;
     font-family: lora;
   }
-  .btn{
-    position: relative;
-    left: 80%;
-    width: 18%;
-    top: -7rem;
-    height: 5rem;
-  }
+ .row{
+    padding-top: 2rem;
+ }
