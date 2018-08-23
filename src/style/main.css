@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lora|PT+Serif');
+@import url('../components/applicationForm/applicationForm.css');
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif; 
+  background-color: #f2f2f3a6;
   font-family: 'PT Serif', serif;
   box-sizing: border-box;
   
@@ -25,41 +27,9 @@ body {
   
   
 }
-.caption{
-  font-size: 20px;
-}
-.display-toggle{
-  display: none;
-}
-.reason-comment{
-  margin-top: 1.2rem;
-  border-radius: 4px 4px;
-  border-color: #ced4da;
-}
 
-.application-form{
-  width: 60vw;
-}
-label{
-  font-size: 20px;
-  margin-bottom: 1rem;
-  margin: 12px 0px 13px 5px;
-  color: #2d2d2d;
-}
-.fill-area{ 
-  margin: 2rem;
-  width: 60rem;
-  background-color: #cbcbced4;
-  border-radius: 10px; 
-  line-height: 0;
-}
-
-.submit-position{
-  position: relative;
-  left: 47%;
-}
 .links{
-   width: 30rem;
+    width: 30rem;
     font-size: 2.5rem;
     border-radius: 10px;
     background: #cccbd087;
@@ -73,10 +43,8 @@ a{
   display: flex;
 }
 .home-layout{
+  
   justify-content: center;
   align-items: center;
 }
 
-.form-pad{
-  padding: 2rem 0 2rem 0;
-}

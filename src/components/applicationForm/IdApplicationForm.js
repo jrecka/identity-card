@@ -32,7 +32,6 @@ class IdApplicationForm extends React.Component{
             placeOfApplication: '',
          }
     }
-
     showTextarea = () => {
 
         let textarea = document.querySelector('textarea'),
@@ -47,11 +46,11 @@ class IdApplicationForm extends React.Component{
     handleChange = event =>{
         this.setState({
             [event.target.name]: event.target.value
-        })
+        });
         this.showTextarea();
     }
-    formSubmit = e => {
-        e.preventDefault();
+    handleSubmit = event => {
+        event.preventDefault();
         const completedApplication = {
             socialSecurityNumber: this.state.socialSecurityNumber,
             name: this.state.name,
@@ -87,16 +86,13 @@ class IdApplicationForm extends React.Component{
 
     render(){
         return(
-            <div>
-            <div >
-            <div>
-                <form onSubmit={e => this.formSubmit(e)} className='container' >
-                <div className= 'fill-area'>
-                <div className='row form-pad' > 
-                
-<div className='col-md-1'></div>
-                   <div className='col-md-5' style={{paddingRight: '2rem'}} >
-                        <div className='form-group'>
+            <div className='application-form'>
+
+                <form onSubmit={this.handleSubmit}  className='container form-background'>
+            
+                <div className='row' >
+            
+                        <div className=' form-group col-md-4'>
                         {/* <div className='caption'>Personal data</div> */}
                             <label>
                                 Social security number
@@ -109,7 +105,8 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.socialSecurityNumber}>
                             </input>       
                         </div>
-                        <div className='form-group'>
+            
+                        <div className='form-group col-md-4'>
                             <label>
                                 Name
                             </label>
@@ -120,7 +117,8 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.state.handleChange}
                                 value={this.state.handleChange}/>
                         </div>
-                        <div className='form-group'>
+                        
+                        <div className='form-group col-md-4'>
                             <label>
                                 Surname
                             </label>
@@ -132,21 +130,23 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.surname}>
                             </input>
                         </div>
-                        <div className='form-group'>
+                        
+                        <div className='form-group  col-md-4'>
                             <label>
                                 Family name
                             </label>
                           <input
-                             name="familyName"
+                             name='familyName'
                              className='form-control'
                              type='text'
                              onChange={this.handleChange}
                              value={this.state.familyName}>
                             </input>
                        </div>
-                        <div className='form-group'>
+                        
+                        <div className='form-group  col-md-4'>
                             <label>
-                             Date of birth
+                                 Date of birth
                             </label>
                             <input
                                 name='dateOfBirth'
@@ -155,8 +155,9 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}
                                 value={this.state.dateOfBirth}>
                             </input>
-                        </div>
-                        <div className='form-group'>
+                            </div>
+                        
+                            <div className='form-group  col-md-4'>
                             <label>
                                 Birthplace
                             </label>
@@ -168,7 +169,8 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.birthplace}>
                             </input>
                         </div>
-                        <div className='form-group'>
+        
+                        <div className='form-group  col-md-4'>
                             <label>
                                 Nationality
                             </label>
@@ -180,7 +182,8 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.nationality}>
                             </input>
                         </div>    
-                        <div className='form-group'>
+                        
+                        <div className='form-group  col-md-4'>
                             <label>
                                 Gender
                             </label>
@@ -196,10 +199,8 @@ class IdApplicationForm extends React.Component{
                                     </option>
                             </select>
                         </div>
-                        {/* <div className='caption'>
-                            Parents data
-                        </div> */}
-                        <div className='form-group'>
+                        
+                        <div className='form-group  col-md-4'>
                             <label>
                                 Mother's name
                             </label>
@@ -211,7 +212,8 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.mothersName}>
                             </input>
                         </div>
-                        <div className='form-group'>
+                        
+                        <div className='form-group  col-md-4'>
                             <label>
                                 Father's name
                             </label>
@@ -223,9 +225,8 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.fathersName}>
                             </input>
                         </div>
-                        </div>
-                        <div className='col-md-5' style={{paddingLeft: '2rem'}}>
-                        <div className='form-group'>
+                        
+                        <div className='form-group  col-md-4'>
                             <label>
                                 Mother's maiden name
                             </label>
@@ -236,10 +237,22 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}
                                 value={this.state.maidenName}/>
                         </div>
-                        {/* <div className='caption'>
+                        
+                        <div className="form-group  col-md-4">
+                            <label>
+                                Phone number
+                            </label>
+                            <input
+                                type='text'
+                                className='form-control'
+                                name='phoneNumber'
+                                value={this.state.phoneNumber}
+                                onChange={this.handleChange}/>
+                        </div>
+                    {/* <div className='caption'>
                             Contact
                         </div> */}
-                        <div className='form-group'>
+                        <div className='form-group  col-md-4'>
                             <label>
                                 Street
                             </label>
@@ -250,7 +263,7 @@ class IdApplicationForm extends React.Component{
                                 className='form-control'
                                 onChange={this.handleChange}/>
                         </div>
-                        <div className='form-group'>
+                        <div className='form-group  col-md-4'>
                             <label>
                                 House number
                             </label>
@@ -261,7 +274,7 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.houseNumber}
                                 onChange={this.handleChange}/>
                         </div>
-                        <div className='form-group'>
+                        <div className='form-group  col-md-4'>
                             <label>
                                 Flat
                             </label>
@@ -272,7 +285,7 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.flatNumber}
                                 onChange={this.handleChange}/>
                         </div>
-                        <div className='form-group'>
+                        <div className='form-group  col-md-4'>
                             <label>
                                 Postal code
                             </label>
@@ -284,7 +297,8 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}
                             />
                         </div>
-                        <div className="form-group">
+                        
+                        <div className="form-group  col-md-4">
                             <label>
                                 Electronic address
                             </label>
@@ -295,18 +309,8 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.electronicAddress}
                                 onChange={this.handleChange}/>
                         </div>
-                        <div className="form-group">
-                            <label>
-                                Phone number
-                            </label>
-                            <input
-                                type='text'
-                                className='form-control'
-                                name='phoneNumber'
-                                value={this.state.phoneNumber}
-                                onChange={this.handleChange}/>
-                        </div>
-                        <div className="form-group">
+                        
+                        <div className="form-group  col-md-4">
                             <label>
                                 Email
                             </label>
@@ -318,28 +322,8 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}
                             />
                         </div>
-                        <div className='form-group'>
-                            <label>
-                                Reason
-                            </label>
-                            <select 
-                                name='reasonOfApplication'
-                                className='form-control'
-                                id='reason'
-                                value={this.state.reasonOfApplication}
-                                onChange={this.handleChange}>
-                                {this.option.map((option, i)=> <option key={i} value={option}>{option}</option>)}
-                            </select>
-                            <textarea
-                                name='message'
-                                value={this.state.message}
-                                onChange={this.handleChange}
-                                className='display-toggle reason-comment'
-                                rows='4'
-                                cols='50'>
-                            </textarea>
-                        </div>
-                        <div className='form-group'>
+                        
+                        <div className='form-group  col-md-4'>
                             <label>
                                 City
                             </label>
@@ -350,31 +334,42 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.placeOfApplication}
                                 onChange={this.handleChange}/>
                         </div>
-                        {/* <div className='form-group'>
-                            <label>
-                                Date 
-                            </label>
-                            <input
-                                className='form-control'
-                                type='date'
-                                name='dateOfApplication'
-                                value={this.state.dateOfApplication}
-                                onChange={this.handleChange}/>
-                        </div> */}
-                        </div>
-                        </div>
-                        </div>
                         
-    
+                        <div className='form-group  col-md-4'>
+                            <label>
+                                Reason
+                            </label>
+                            <select 
+                                name='reasonOfApplication'
+                                className='form-control'
+                                id='reason'
+
+                                value={this.state.reasonOfApplication}
+                                onChange={this.handleChange}>
+                                {this.option.map((option, i)=> <option key={i} value={option}>{option}</option>)}
+                        </select>
+                     </div>
+            
+                       <div className='form-group  col-md-4'>
+                            <textarea
+                                placeholder='Add reason'
+                                name='message'
+                                value={this.state.message}
+                                onChange={this.handleChange}
+                                className='display-toggle reason-comment'
+                                rows='2'
+                                cols='50'>
+                            </textarea>
+                       </div>
+
                             <button
                                 onClick={this.showData}
                                 type='submit'
-                                className='btn btn-secondary submit-possition'>
-                                <i class="fas fa-file-export"></i>
+                                className='btn btn-secondary submit-position'>
+                            SUBMIT &nbsp; <i class="fas fa-file-export"></i>
                             </button>
-                    </form>
-                    </div>
-            </div>
+                            </div>
+                </form>
             </div>
         )
     }

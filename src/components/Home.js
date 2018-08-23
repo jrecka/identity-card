@@ -1,5 +1,5 @@
 import React from 'react';
-import IdApplicationForm from './IdApplicationForm';
+import IdApplicationForm from './applicationForm/IdApplicationForm';
 import {Link} from 'react-router-dom';
 
 class HomePage extends React.Component{
