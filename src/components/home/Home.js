@@ -5,11 +5,12 @@ class HomePage extends React.Component{
     render(){
         return(
             <div>    <div className='blurred-bg'> </div> 
-   <div className='links'>
+
+   <div className='links container' >
     <Link to="/idApplicationForm"
-        className='link'>Fill your request</Link>
+        className='link row'>Fill your request</Link>
     <Link to='/applicationsList'
-        className='link'>See all applications</Link>
+        className='link row'>See all applications</Link>
     </div>
     
         </div>

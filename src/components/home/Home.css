@@ -1,15 +1,15 @@
 .links{
     font-size: 2.5rem;
-     
     margin:0 auto;
     text-align: center;
     position: relative;
     top: 22rem;
 }
 .link{
-  margin: 0 2rem;
-  padding: 2rem 2rem;
-    width: 30rem;
+  width: 40%;
+    display: inline-block;
+    margin: 0 2rem;
+    padding: 2rem 2rem;
     border-radius: 10px;
     background: #6666665e;
     border-radius: 10px;  
