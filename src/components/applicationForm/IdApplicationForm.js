@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 
 class IdApplicationForm extends React.Component{
@@ -42,12 +43,14 @@ class IdApplicationForm extends React.Component{
             textarea.classList.add('display-toggle');
         }
     }
- 
     handleChange = event =>{
         this.setState({
             [event.target.name]: event.target.value
         });
         this.showTextarea();
+    }
+    showList = () => {
+        setTimeout(()=>window.location.href='http://localhost:3000/#/applicationsList', 3000)
     }
     handleSubmit = event => {
         event.preventDefault();
@@ -86,7 +89,12 @@ class IdApplicationForm extends React.Component{
 
     render(){
         return(
-            <div className='application-form'>
+            <div className='container application-form'>
+            <div className='row'>
+                <Link to='/'>
+                <button className='btn btn-secondary'><i class="fas fa-arrow-left"></i></button>
+                </Link>
+                </div>
 
                 <form onSubmit={this.handleSubmit}  className='container form-background'>
             
@@ -114,8 +122,8 @@ class IdApplicationForm extends React.Component{
                                 className='form-control'
                                 name='name'
                                 type='text'
-                                onChange={this.state.handleChange}
-                                value={this.state.handleChange}/>
+                                onChange={this.handleChange}
+                                value={this.state.name}/>
                         </div>
                         
                         <div className='form-group col-md-4'>
@@ -362,11 +370,12 @@ class IdApplicationForm extends React.Component{
                             </textarea>
                        </div>
 
-                            <button
-                                onClick={this.showData}
+                           <button
+                                onClick={this.showList}
                                 type='submit'
                                 className='btn btn-secondary submit-position'>
                             SUBMIT &nbsp; <i class="fas fa-file-export"></i>
+                            
                             </button>
                             </div>
                 </form>
@@ -376,9 +385,3 @@ class IdApplicationForm extends React.Component{
 }
 
 export default IdApplicationForm;
-
-
-{/* <IdApplicationForm option={[' ', 'First Id', 'Change of data contained in the Id', 'Id is out of date', 'Id is lost', 'Face image changed', 'Damage of Id', 'Another reason']}/> */}
-<i class="fas fa-file-export"></i>
-
-

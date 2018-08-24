@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 export default class ApplicationsList extends React.Component{
     constructor(props){
@@ -25,8 +26,13 @@ export default class ApplicationsList extends React.Component{
     }
     render(){
         return(
-            <div className="container">
-                        <div className="row">
+            <div className="container list-page">
+                <div className='row'>
+                <Link to='/'>
+                <button className='btn btn-secondary'><i class="fas fa-arrow-left"></i></button>
+                </Link>
+                </div>
+                        <div className="row list">
                             <table className="col-md-12">
                                  <thead>
                                     <tr>
@@ -42,7 +48,7 @@ export default class ApplicationsList extends React.Component{
                                             <tr key={index}>
                                                 <td>{data.name}</td>
                                                 <td>{data.surname}</td>
-                                                {/* <td>{data.dateOfApplication.substring(0, 10)}</td> */}
+                                                <td>{data.dateOfApplication}</td>
                                                 <td>
                                                 </td>
                                             </tr>
