@@ -1,6 +1,7 @@
 {
   "name": "id",
   "version": "0.1.0",
+  "homepage": "https://jrecka.github.io/reactjs-id-card-application/",
   "private": true,
   "dependencies": {
     "ajv": "6.0.0",
@@ -25,10 +26,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server": "nodemon src/server/server.js"
+    "server": "nodemon src/server/server.js",
+    "predeploy":  "npm run build",
+    "deploy":  "gh-pages -d build" 
+    
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "gh-pages": "^1.2.0",
     "nodemon": "^1.18.3"
   }
 }
