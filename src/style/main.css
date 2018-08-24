@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lora|PT+Serif');
 @import url('../components/applicationForm/applicationForm.css');
 @import url('../components/home/Home.css');
+@import url('../components/applicationsList/applicationsList.css');
 body {
   margin: 0;
   padding: 0;

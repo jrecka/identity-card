@@ -25,7 +25,34 @@ export default class ApplicationsList extends React.Component{
     }
     render(){
         return(
-            <div> jestem z toba :D</div>
+            <div className="container">
+                        <div className="row">
+                            <table className="col-md-12">
+                                 <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Surname</th>
+                                        <th scope="col">Date of submitting the application</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {this.state.applicationsList.map((data, index) => {
+                                        return (
+                                            <tr key={index}>
+                                                <td>{data.name}</td>
+                                                <td>{data.surname}</td>
+                                                {/* <td>{data.dateOfApplication.substring(0, 10)}</td> */}
+                                                <td>
+                                                </td>
+                                            </tr>
+                                        )
+                                    }).reverse()
+                                    }
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
         )
     }
     }

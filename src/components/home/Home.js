@@ -6,8 +6,10 @@ class HomePage extends React.Component{
         return(
             <div>    <div className='blurred-bg'> </div> 
    <div className='links'>
-    <Link to="/idApplicationForm">Fill your request</Link>
-    <Link to='/applicationsList'>See all applications</Link>
+    <Link to="/idApplicationForm"
+        className='link'>Fill your request</Link>
+    <Link to='/applicationsList'
+        className='link'>See all applications</Link>
     </div>
     
         </div>
