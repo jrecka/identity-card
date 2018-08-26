@@ -31,6 +31,11 @@ class IdApplicationForm extends React.Component{
             message: '',
             dateOfApplication:  new Date().toISOString().substring(0, 10),
             placeOfApplication: '',
+
+            disabled: false,
+            errorMessage: '',
+            displayError: 'none'
+
          }
     }
     showTextarea = () => {
@@ -51,6 +56,20 @@ class IdApplicationForm extends React.Component{
     }
     showList = () => {
         setTimeout(()=>window.location.href='http://localhost:3000/#/applicationsList', 3000)
+    }
+    formValueChecker = () => {
+        if(this.state.socialSecurityNumber.length !== 11){
+            this.setState({
+                displayError: 'block',
+                // disabled: false,
+                errorMessage: 'Social security number is too short'
+            })
+        } else {
+            this.setState({
+                displayError: 'none',
+                disabled: true
+            })
+        }
     }
     handleSubmit = event => {
         event.preventDefault();
@@ -110,8 +129,12 @@ class IdApplicationForm extends React.Component{
                                 type='text'
                                 onChange={this.handleChange}
                                 name='socialSecurityNumber'
-                                value={this.state.socialSecurityNumber}>
+                                value={this.state.socialSecurityNumber}
+                                onBlur={this.formValueChecker}>
                             </input>       
+                            <output style={{display: this.state.displayError}}
+                                    className='errorMessage'>{this.state.errorMessage
+                            }</output>
                         </div>
             
                         <div className='form-group col-md-4'>
@@ -371,6 +394,7 @@ class IdApplicationForm extends React.Component{
                        </div>
 
                            <button
+                                disabled={this.state.disabled}
                                 onClick={this.showList}
                                 type='submit'
                                 className='btn btn-secondary submit-position'>

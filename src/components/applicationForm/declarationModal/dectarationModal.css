@@ -1,0 +1,12 @@
+.declarationModal{
+    position: absolute;
+    left: 35%;
+    right: 25%;
+    top: 25%;
+    background-color: #5A5D69;
+    width: 50rem;
+    height: 40rem;
+    color: #efefef;
+    border-radius:10px;
+
+}
