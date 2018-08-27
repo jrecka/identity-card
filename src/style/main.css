@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Lora|PT+Serif');
+/* @import url('https://fonts.googleapis.com/css?family=Lora|PT+Serif'); */
+@import url('https://fonts.googleapis.com/css?family=Rubik');
 @import url('../components/applicationForm/applicationForm.css');
 @import url('../components/home/Home.css');
 @import url('../components/applicationsList/applicationsList.css');
+@import url('../components/applicationForm/declarationModal/dectarationModal.css');
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif; 
   background-color: #f2f2f3a6;
-  font-family: 'PT Serif', serif;
+  font-family: 'Rubik', sans-serif;
   box-sizing: border-box;
   
 }

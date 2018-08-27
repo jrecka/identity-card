@@ -1,0 +1,26 @@
+.declarationModal{
+    background-color: #f6f6f7;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    width: 98%;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: 1;
+}
+
+.declaration{
+    box-shadow: 0 0px 11px 1px #6c757d63;
+    background-color: #bababa78;
+    font-size: 21px;
+    font-size: 21px;
+    border-radius: 10px;
+    border: 1px solid #dddde1;
+    margin-top: 1%;
+
+}
+h2{
+    text-align: center;
+    text-decoration: underline;
+}

@@ -17,6 +17,7 @@
     font-size: 20px;
    color: #2d2d2d;
    margin-left: 1rem;
+   margin-bottom: 0.2rem;
  }
   .reason-comment{
     border-radius: 4px 4px;
@@ -43,9 +44,15 @@
   p{
     text-decoration: underline;
     text-align: center;
-    font-family: lora;
-  }
 
+  }
+  .info-message{
+    color: rgba(91, 93, 102, 1);
+    font-size: 15px;
+    position: absolute; 
+    /* margin-bottom: 1rem;  */
+    padding-left: 0.7rem;
+  }
   .errorMessage{
     color: red;
     text-decoration: underline;
@@ -53,3 +60,18 @@
  /* .row{
     padding-top: 2rem;
  } */
+ /* .nationality-style{
+   margin-bottom: 1.5rem;
+ } */
+ input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+h4{
+  color: #404040;
+  text-decoration-line: underline;
+}
+input[type="date"]::-webkit-inner-spin-button { 
+  display: none;
+}
