@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const Task = require('./api/models/idApplicationFormModel');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
+const cors = require('cors');
 
  mongoose.Promise = global.Promise;
  mongoose.connect(keys.mongoDb.dbURI, ()=>{
@@ -13,6 +14,7 @@ const keys = require('./config/keys');
  
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors())
 
 var routes = require('./api/routes/idApplicationFormRoutes'); 
 routes(app);
