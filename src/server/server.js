@@ -9,7 +9,7 @@ const cors = require('cors');
 
  mongoose.Promise = global.Promise;
  mongoose.connect(keys.mongoDb.dbURI, ()=>{
-  console.log('hahahaaaaaaa');
+  console.log('Success!');
 });
  
 app.use(bodyParser.urlencoded({ extended: true }));

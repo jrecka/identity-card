@@ -1,62 +1,49 @@
 import React from 'react';
 import DeclarationText from './DeclarationText';
+import { set } from 'mongoose';
 
 class Declaration extends React.Component{
     constructor(props){
         super(props);
         this.state={
             showModal: 'block',
-            declaration: false,
-            disabled: false,
-            declarationError: '',
-            displayError: 'none'
+            disabled: true,
         }
     }
     handleChange = event =>{
-        this.setState({
-            declaration: event.target.value,
+        event.target.checked ? this.setState({
             disabled: false
+        }) : this.setState({disabled: true})
+    }
+
+    handleClick = () =>{
+        this.setState({
+            showModal: 'none'
         })
+    }
+
     
-    }
-
-    checkDeclarationValue = () =>{
-        if(this.state.declaration){
-            this.setState({
-                disabled: false,
-                showModal: 'none',
-                displayError: 'none'
-
-            })
-        } else {
-            this.setState({
-                declarationError: 'lololl',
-                displayError: 'block',
-                disabled: true,
-                showModal: true
-                
-
-            })
-        }
-    }
     
     render(){
         return(
-        <div className='declarationModal'
+        <div className='declaration-background'
             style={{display: this.state.showModal}}>
         <div className='declaration container'>
         <DeclarationText/>
-        <input type='checkbox'
-               value={this.state.declaration} 
-               onChange={this.handleChange}
+        <input
+            type='checkbox'
+            checked={this.state.checked} 
+            onChange={this.handleChange}
         />
         <label>I confirm.</label>
-        <span style={{display: this.state.displayError}}>{this.state.declarationError}</span>
-        <button className='btn btn-secondary'
+        <button className='btn btn-secondary closing-button'
                 style={{display: this.state.showModal}}
                 disabled={this.state.disabled}
-                onClick={this.checkDeclarationValue}>
-                
+                onClick={this.handleClick}>
+            {/* <i class="fas fa-pen-fancy"></i> */}
+            <i class="fas fa-file-signature"></i>
+            &nbsp;
+            Fill out the form
         </button>
         </div>
         </div>

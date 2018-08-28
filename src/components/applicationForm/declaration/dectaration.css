@@ -1,4 +1,4 @@
-.declarationModal{
+.declaration-background{
     background-color: #f6f6f7;
     height: 100%;
     position: absolute;
@@ -9,7 +9,13 @@
     top: 1rem;
     z-index: 1;
 }
-
+.closing-button {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    padding: 1.1rem 1rem;
+    font-size: 20px;
+}
 .declaration{
     box-shadow: 0 0px 11px 1px #6c757d63;
     background-color: #bababa78;
