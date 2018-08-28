@@ -7,20 +7,21 @@ class Declaration extends React.Component{
         this.state={
             showModal: 'block',
             declaration: false,
-            disabled: true,
+            disabled: false,
             declarationError: '',
             displayError: 'none'
         }
     }
     handleChange = event =>{
         this.setState({
-            declaration: event.target.value
+            declaration: event.target.value,
+            disabled: false
         })
     
     }
 
     checkDeclarationValue = () =>{
-        if(this.state.declaration === true){
+        if(this.state.declaration){
             this.setState({
                 disabled: false,
                 showModal: 'none',
@@ -47,8 +48,7 @@ class Declaration extends React.Component{
         <DeclarationText/>
         <input type='checkbox'
                value={this.state.declaration} 
-               onClick={this.handleChange}
-
+               onChange={this.handleChange}
         />
         <label>I confirm.</label>
         <span style={{display: this.state.displayError}}>{this.state.declarationError}</span>
@@ -56,7 +56,7 @@ class Declaration extends React.Component{
                 style={{display: this.state.showModal}}
                 disabled={this.state.disabled}
                 onClick={this.checkDeclarationValue}>
-                go
+                
         </button>
         </div>
         </div>
