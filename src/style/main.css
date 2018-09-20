@@ -4,6 +4,7 @@
 @import url('../components/home/Home.css');
 @import url('../components/applicationsList/applicationsList.css');
 @import url('../components/applicationForm/declaration/dectaration.css');
+@import url('../components/navbar/NavBar.css');
 body {
   margin: 0;
   padding: 0;

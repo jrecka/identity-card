@@ -6,22 +6,23 @@
     top: 22rem;
 }
 .link{
-  width: 40%;
+    width: 40%;
     display: inline-block;
     margin: 0 2rem;
     padding: 2rem 2rem;
     border-radius: 10px;
-    background: #6666665e;
+    background: #ddddddcf;
     border-radius: 10px;  
     border: 1px solid #9d9d9d;
     -webkit-box-shadow: 0 0px 11px 1px #6c757d63;
-     box-shadow: 0 0px 44px 7px #6c757d75;
+    box-shadow: 0 0px 44px 7px #6c757d75;
 }
 a{
     color: #2d2d2d;
-  }
+}
+
   a:hover{
-    color:#e8e8e8db;
+      color: rgb(67, 101, 156);
     text-decoration-line: none;
   }
   
