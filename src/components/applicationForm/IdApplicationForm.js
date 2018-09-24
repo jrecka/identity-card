@@ -35,7 +35,7 @@ class IdApplicationForm extends React.Component{
             placeOfApplication: '',
 
             disabled: true,
-            errorMessage: '',
+            errorMessage: 'rtyhyr',
             displayError: 'none'
 
          }
@@ -55,23 +55,18 @@ class IdApplicationForm extends React.Component{
             [event.target.name]: event.target.value
         });
         this.showTextarea();
-        this.formValueChecker();
     }
     showList = () => {
         setTimeout(()=>window.location.href='http://localhost:3000/#/applicationsList', 3000)
     }
-    formValueChecker = () => {
-        if(this.state.socialSecurityNumber.length !== 11 && this.state.socialSecurityNumber.length !== 0){
-            this.setState({
-                displayError: 'block',
-                // disabled: false,
-                errorMessage: 'Social security number is too short'
-            })
-        } else {
-            this.setState({
-                displayError: 'none',
-                disabled: true
-            })
+    isFormCompleted = state => {
+        return state.socialSecurityNumber !== 11 ||   state.name === '' || state.surname === '' || state.familyName === '' || state.dateOfBirth === null ||
+        state.birthplace === '' ||  state.mothersName === '' || state.fathersName === '' || state.maidenName === '' || state.street === '' || state.houseNumber === '' ||
+        state.flatNumber === '' || state.postalCode === '' || state.city === '' || state.email === '' || state.reasonOfApplication === '' || state.message === '' || state.placeOfApplication === '';
+    }
+    errorSocialSecurityNumber = state => {
+        if(state.socialSecurityNumber === ''){
+            display: 'block'
         }
     }
     handleSubmit = event => {
@@ -110,27 +105,33 @@ class IdApplicationForm extends React.Component{
 
 
     render(){
+        const formChecker = this.isFormCompleted(this.state);
+        const displayError = this.errorSocialSecurityNumber(this.state);
+
         return(
             <div>
             <NavBar/>
                 <div className='container' >
                     <form onSubmit={this.handleSubmit}  className='d-flex  justify-content-center'>
                         <div className="col-lg-8 col-md-10 form-background ">
-                            <p>Personal data</p>
-                            <div className='form-group '>
+                            <p className='form-headers'>Personal data</p>
+                            <div className='form-group'>
                                 <label>
                                     Social security number
                                 </label>
                                 <input
                                     className='form-control'
-                                    type='number'
+                                    type='text'
                                     onChange={this.handleChange}
                                     name='socialSecurityNumber'
                                     value={this.state.socialSecurityNumber}
                                     onBlur={this.formValueChecker}>
                                 </input>
-                                <output style={{display: this.state.displayError}}
-                                    className='errorMessage'>{this.state.errorMessage}</output>
+                                <output style={displayError}
+
+                                    className='errorMessage'>
+                                    <i className="fas fa-exclamation-circle"></i>
+                                    <span>The length of personal identity number is 11</span> </output>
                             </div>
                             <div className='form-group'>
                                 <label>
@@ -142,11 +143,12 @@ class IdApplicationForm extends React.Component{
                                     type='text'
                                     onChange={this.handleChange}
                                     value={this.state.name}/>
-                                <span className='info-message'>
+                                <p className='info-message'>
                                     <i class="fas fa-info-circle"></i>
-                                    &nbsp;
                                     All names
-                                </span>
+                                </p>
+                                <p>
+                                </p>
                                 </div>
                         
                         <div className='form-group'>
@@ -173,17 +175,14 @@ class IdApplicationForm extends React.Component{
                              onChange={this.handleChange}
                              value={this.state.familyName}>
                             </input>
-                            <span className='info-message'>
-                                <i class="fas fa-info-circle"></i>
-                                &nbsp;
+                            <p className='info-message'>
+                                <i className="fas fa-info-circle"></i>
+                                <span>
                                 Applies to women and men
                             </span>
-                            <span>&nbsp;</span>
+                            </p>
                        </div>
-                      
-                    
-                        
-                        <div className='form-group'>
+                       <div className='form-group'>
                             <label>
                                  Date of birth
                             </label>
@@ -242,7 +241,7 @@ class IdApplicationForm extends React.Component{
                                     </option>
                             </select>
                         </div>
-                        <p>Patents data</p>
+                            <p className='form-headers'>Parents data</p>
                         <div className='form-group'>
                             <label>
                                 Mother's name
@@ -280,7 +279,7 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}
                                 value={this.state.maidenName}/>
                         </div>
-                        <h4 className='col-md-8'>Contact address</h4>
+                        <p className='form-headers'>Contact address</p>
                         <div className='form-group'>
                             <label>
                                 Street
@@ -372,10 +371,10 @@ class IdApplicationForm extends React.Component{
                                 onChange={this.handleChange}
                             />
                         </div>
-                        <div className='form-group'>
-                            
-                                <h4>Reason of request</h4>
-                            <select 
+                            <p className='form-headers'>Reason of request</p>
+                            <div className='form-group'>
+
+                            <select
                                 name='reasonOfApplication'
                                 className='form-control'
                                 id='reason'
@@ -392,19 +391,21 @@ class IdApplicationForm extends React.Component{
                                 name='message'
                                 value={this.state.message}
                                 onChange={this.handleChange}
-                                className='display-toggle reason-comment'
+                                className='display-toggle reason'
                                 rows='2'
                                 cols='50'>
                             </textarea>
                        </div>
+                            <div className='col-12 d-flex align-items-center'>
                    <button
-                                disabled={this.state.disabled}
+                                disabled={formChecker}
                                 onClick={this.showList}
                                 type='submit'
-                                className='btn btn-secondary submit-position'>
+                                className='btn btn-secondary submit-btn'>
                             SUBMIT &nbsp; <i class="fas fa-file-export"></i>
                             
                             </button>
+                            </div>
 </div>
                 </form>
             </div>
