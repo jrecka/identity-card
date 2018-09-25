@@ -244,7 +244,7 @@ class IdApplicationForm extends React.Component{
                             <p className='form-headers'>Parents data</p>
                         <div className='form-group'>
                             <label>
-                                Mother's name
+                                Mother's name (first)
                             </label>
                             <input
                                 name='mothersName'
@@ -257,7 +257,7 @@ class IdApplicationForm extends React.Component{
                         
                         <div className='form-group'>
                             <label>
-                                Father's name
+                                Father's name (first)
                             </label>
                             <input
                                 name='fathersName'
@@ -357,9 +357,15 @@ class IdApplicationForm extends React.Component{
                                 name='electronicAddress'
                                 value={this.state.electronicAddress}
                                 onChange={this.handleChange}/>
+
+                            <p className='info-message'>
+                                <i className="fas fa-info-circle"></i>
+                                <span>EPUAP mailbox address. Fill out if you want to receive confirmation
+in the form of an electronic document.</span>
+                            </p>
                         </div>
-                        
-                        <div className="form-group">
+
+                                <div className="form-group">
                             <label>
                                 Email
                             </label>
