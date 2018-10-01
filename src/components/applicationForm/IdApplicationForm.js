@@ -33,7 +33,6 @@ class IdApplicationForm extends React.Component{
             message: '',
             dateOfApplication:  new Date().toISOString().substring(0, 10),
             placeOfApplication: '',
-
             disabled: true,
             errorMessage: 'rtyhyr',
             displayError: 'none'
@@ -64,10 +63,13 @@ class IdApplicationForm extends React.Component{
         state.birthplace === '' ||  state.mothersName === '' || state.fathersName === '' || state.maidenName === '' || state.street === '' || state.houseNumber === '' ||
         state.flatNumber === '' || state.postalCode === '' || state.city === '' || state.email === '' || state.reasonOfApplication === '' || state.message === '' || state.placeOfApplication === '';
     }
-    errorSocialSecurityNumber = state => {
-        if(state.socialSecurityNumber === ''){
+    errorSocialSecurityNumber = () => {
+        if(this.state.socialSecurityNumber === ''){
             display: 'block'
+        } else {
+            display: 'none'
         }
+
     }
     handleSubmit = event => {
         event.preventDefault();
@@ -106,7 +108,7 @@ class IdApplicationForm extends React.Component{
 
     render(){
         const formChecker = this.isFormCompleted(this.state);
-        const displayError = this.errorSocialSecurityNumber(this.state);
+        const displayError = this.errorSocialSecurityNumber();
 
         return(
             <div>
@@ -115,6 +117,7 @@ class IdApplicationForm extends React.Component{
                     <form onSubmit={this.handleSubmit}  className='d-flex  justify-content-center'>
                         <div className="col-lg-8 col-md-10 form-background ">
                             <p className='form-headers'>Personal data</p>
+                            <div className='line'></div>
                             <div className='form-group'>
                                 <label>
                                     Social security number
@@ -242,6 +245,7 @@ class IdApplicationForm extends React.Component{
                             </select>
                         </div>
                             <p className='form-headers'>Parents data</p>
+                            <div className='line'></div>
                         <div className='form-group'>
                             <label>
                                 Mother's name (first)
@@ -280,6 +284,7 @@ class IdApplicationForm extends React.Component{
                                 value={this.state.maidenName}/>
                         </div>
                         <p className='form-headers'>Contact address</p>
+                            <div className='line'></div>
                         <div className='form-group'>
                             <label>
                                 Street
@@ -360,8 +365,7 @@ class IdApplicationForm extends React.Component{
 
                             <p className='info-message'>
                                 <i className="fas fa-info-circle"></i>
-                                <span>EPUAP mailbox address. Fill out if you want to receive confirmation
-in the form of an electronic document.</span>
+                                <span>EPUAP mailbox address. Fill out to receive an electronic document.</span>
                             </p>
                         </div>
 
@@ -378,8 +382,9 @@ in the form of an electronic document.</span>
                             />
                         </div>
                             <p className='form-headers'>Reason of request</p>
+                            <div className='line'></div>
                             <div className='form-group'>
-
+                            <label>Choose reason</label>
                             <select
                                 name='reasonOfApplication'
                                 className='form-control'
@@ -402,19 +407,18 @@ in the form of an electronic document.</span>
                                 cols='50'>
                             </textarea>
                        </div>
-                            <div className='col-12 d-flex align-items-center'>
-                   <button
-                                disabled={formChecker}
-                                onClick={this.showList}
-                                type='submit'
-                                className='btn btn-secondary submit-btn'>
-                            SUBMIT &nbsp; <i class="fas fa-file-export"></i>
-                            
-                            </button>
+                            <div className='text-center'>
+                                 <button
+                                    disabled={formChecker}
+                                    onClick={this.showList}
+                                    type='submit'
+                                    className='btn btn-secondary submit-btn'>
+                                    SUBMIT &nbsp; <i class="fas fa-file-export"></i>
+                                </button>
                             </div>
-</div>
-                </form>
-            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
 
         )

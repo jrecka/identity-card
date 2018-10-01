@@ -7,6 +7,13 @@
   /*input[type="date"]::-webkit-inner-spin-button {*/
       /*display: none;*/
   /*}*/
+   .line {
+       width: 100%;
+       height: 2px;
+       background-color: #212529de;
+       margin-bottom: 1.5rem;
+
+   }
   input[type="date"]::-webkit-calendar-picker-indicator {
       display: none;
       -webkit-appearance: none;
@@ -45,6 +52,7 @@
       cursor: pointer;
       padding: 0.8rem 3rem;
       font-size: 1.3rem;
+      margin-top: 1rem;
   }
   .reason{
       width: 100%;
@@ -57,16 +65,20 @@
     }
 
     .form-background{
-      margin-top: 3%;
+      color: #212529de;
+      margin: 3% 0;
       background-color: #bababa78;
       border-radius: 10px;
       box-shadow: 0 0px 11px 1px #6c757d63;
       border: 1px solid #dddde1;
+      padding: 0 2rem 2rem 2rem;
     }
 
   .form-headers{
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0;
+      margin-top: 2.2rem;
+      padding-left: 1rem;
   }
 
   .display-toggle{
