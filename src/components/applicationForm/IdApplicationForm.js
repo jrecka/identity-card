@@ -58,17 +58,11 @@ class IdApplicationForm extends React.Component{
     showList = () => {
         setTimeout(()=>window.location.href='http://localhost:3000/#/applicationsList', 3000)
     }
-    isFormCompleted = state => {
-        return state.socialSecurityNumber !== 11 ||   state.name === '' || state.surname === '' || state.familyName === '' || state.dateOfBirth === null ||
-        state.birthplace === '' ||  state.mothersName === '' || state.fathersName === '' || state.maidenName === '' || state.street === '' || state.houseNumber === '' ||
-        state.flatNumber === '' || state.postalCode === '' || state.city === '' || state.email === '' || state.reasonOfApplication === '' || state.message === '' || state.placeOfApplication === '';
+    isFormChecked = state => {
+        return state.socialSecurityNumber.length !== 11 || state.name === '' || state.surname === '' || state.familyName === '' || state.birthplace === '' || state.mothersName === '' || state.fathersName === '' || state.maidenName === '' || state.street === '' || state.houseNumber === '' || state.postalCode === '' || state.placeOfApplication === '' || state.email === '' || state.reasonOfApplication === '';
     }
-    errorSocialSecurityNumber = () => {
-        if(this.state.socialSecurityNumber === ''){
-            display: 'block'
-        } else {
-            display: 'none'
-        }
+    errorSocialSecurityNumber = state => {
+       return state.socialSecurityNumber !== '' && state.socialSecurityNumber.length !== 11 ? {display : 'block'} : {display: 'none'};
 
     }
     handleSubmit = event => {
@@ -107,8 +101,8 @@ class IdApplicationForm extends React.Component{
 
 
     render(){
-        const formChecker = this.isFormCompleted(this.state);
-        const displayError = this.errorSocialSecurityNumber();
+        const formChecker = this.isFormChecked(this.state);
+        const displayError = this.errorSocialSecurityNumber(this.state);
 
         return(
             <div>
@@ -128,10 +122,9 @@ class IdApplicationForm extends React.Component{
                                     onChange={this.handleChange}
                                     name='socialSecurityNumber'
                                     value={this.state.socialSecurityNumber}
-                                    onBlur={this.formValueChecker}>
+                                    >
                                 </input>
                                 <output style={displayError}
-
                                     className='errorMessage'>
                                     <i className="fas fa-exclamation-circle"></i>
                                     <span>The length of personal identity number is 11</span> </output>
@@ -389,7 +382,6 @@ class IdApplicationForm extends React.Component{
                                 name='reasonOfApplication'
                                 className='form-control'
                                 id='reason'
-
                                 value={this.state.reasonOfApplication}
                                 onChange={this.handleChange}>
                                 {this.option.map((option, i)=> <option key={i} value={option}>{option}</option>)}
