@@ -49,6 +49,7 @@ class IdApplicationForm extends React.Component{
             textarea.classList.add('display-toggle');
         }
     }
+
     handleChange = event =>{
         this.setState({
             [event.target.name]: event.target.value
@@ -103,10 +104,10 @@ class IdApplicationForm extends React.Component{
     render(){
         const formChecker = this.isFormChecked(this.state);
         const displayError = this.errorSocialSecurityNumber(this.state);
-
         return(
             <div>
             <NavBar/>
+
                 <div className='container' >
                     <form onSubmit={this.handleSubmit}  className='d-flex  justify-content-center'>
                         <div className="col-lg-8 col-md-10 form-background ">

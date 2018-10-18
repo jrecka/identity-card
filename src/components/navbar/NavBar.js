@@ -1,24 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink,  } from 'react-router-dom';
 
 
 class NavBar extends React.Component{
     render(){
+        const activeColor = {color: '#43659c'};
         return(
-            <div className="pos-f-t">
+            <div >
                 <div className="collapse" id="navbarToggleExternalContent">
-                    <div className="row navbar-style separation-line">
-                        <div className="col-md-3">
-                            <Link className="nav-text" to="/">Home</Link>
-                        </div>
-                        <div className="col-md-3">
-                            <Link className="nav-text" to="/idApplicationForm">Fill your request</Link>
-                        </div>
-                        <div className="col-md-3">
-                            <Link className="nav-text" to="/applicationsList">See all applications</Link>
+                    <div className=" navbar-style separation-line">
+                        <span  className='navbar-element'>
+                            <NavLink className="nav-text" to="/" >Home</NavLink>
+</span>
+                        <span className='navbar-element'>
+                            <NavLink className="nav-text" to="/idApplicationForm" activeStyle={activeColor}>Fill request</NavLink>
+                        </span>
+                        <span className='navbar-element'>
+                            <NavLink className="nav-text" to="/applicationsList" activeStyle={activeColor}>All applications</NavLink>
+                        </span>
 
-                        </div>
-                    </div>
+
+                 </div>
                 </div>
                 <nav className="navbar navbar-dark navbar-style">
                     <button className="navbar-toggler" type="button" data-toggle="collapse"
@@ -33,3 +35,18 @@ class NavBar extends React.Component{
 
 }
 export default NavBar;
+// <div>
+//     <div className='navbar-style'>
+//
+// <span  className='navbar-element'>
+//                             <NavLink className="nav-text" to="/" >Home</NavLink>
+// </span>
+//         <span className='navbar-element'>
+//                             <NavLink className="nav-text" to="/idApplicationForm" activeStyle={activeColor}>Fill request</NavLink>
+//                         </span>
+//         <span className='navbar-element'>
+//                             <NavLink className="nav-text" to="/applicationsList" activeStyle={activeColor}>All applications</NavLink>
+//                         </span>
+//
+//     </div>
+// </div>

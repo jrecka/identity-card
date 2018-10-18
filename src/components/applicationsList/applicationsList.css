@@ -1,8 +1,23 @@
 tr{
-    border-bottom: 1px solid black;
+     color: #d7d7d7;
 }
+th{
+    background-color: #3a3a3a;
+    padding: 0.5rem 0;
+}
+th:first-child{
+    border-radius: 10px 0 0 0;
+}
+th:last-child{
+    border-radius: 0 10px 0 0;
+}
+
 td{
-    width: 32%
+    width: 33.333%;
+    color: #3a3a3a;
+    padding: 0.4rem 0;
+    background-color: #dadadb;
+    border-bottom: 1px solid
 }
 .list-page{
     margin-top: 1%;
