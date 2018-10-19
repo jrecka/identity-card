@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors())
 
-var routes = require('./api/routes/idApplicationFormRoutes'); 
+const routes = require('./api/routes/idApplicationFormRoutes');
 routes(app);
 app.listen(port);
 

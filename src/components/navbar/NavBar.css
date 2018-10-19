@@ -1,44 +1,50 @@
-.navbar-style{
+.navbar-style {
     background-color: #3a3a3a;
     color: #d7d7d7;
     /*margin-right: 3rem;*/
     font-weight: 500;
-    border-bottom-color: rgba(255,255,255,.1);
+    border-bottom-color: rgba(255, 255, 255, .1);
     font-size: 20px;
     /*font-size: 1.5rem;*/
     padding: .5rem 1rem;
     box-sizing: border-box;
 
 }
-.navbar-style .navbar-element:first-child + .navbar-element{
-    border-left: 1px solid ;
+
+.navbar-style .navbar-element:first-child + .navbar-element {
+    border-left: 1px solid;
     border-right: 1px solid;
 }
-.navbar-element{
+
+.navbar-element {
     padding: 0 3%;
-    margin: 0 ;
+    margin: 0;
 }
 
 /*.navbar-style .navbar-element:last-child{*/
 
-    /*border-right: 1px solid;*/
+/*border-right: 1px solid;*/
 /*}*/
 /*.navbar-element{*/
-    /*padding: 0 3%;*/
-    /*border-left: 1px solid ;*/
-    /*margin: 0 ;*/
+/*padding: 0 3%;*/
+/*border-left: 1px solid ;*/
+/*margin: 0 ;*/
 /*}*/
 
-.separation-line{
-    border-bottom: 1px solid rgba(255,255,255,.1)
+.separation-line {
+    border-bottom: 1px solid rgba(255, 255, 255, .1)
 }
 
-.nav-text{
+.nav-text {
     color: #d7d7d7;
 }
 
-@media (min-width: 340px) and (max-width: 640px){
-    .navbar-element{
+@media (min-width: 340px) and (max-width: 640px) {
+    .navbar-element {
         padding: 0 1rem 0 0;
     }
+}
+
+.home-elem:active {
+    color: green;
 }

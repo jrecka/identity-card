@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a250c983-1de6-4856-a01f-8e2a41efeaa4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/applicationsList/requestModal/RequestModal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/applicationsList/requestModal/modal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/restApiService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/applicationForm/IdApplicationForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicationForm/IdApplicationForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/applicationForm/applicationForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicationForm/applicationForm.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/applicationsList/ApplicationsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicationsList/ApplicationsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/applicationsList/applicationsList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicationsList/applicationsList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/applicationsList/requestModal/RequestModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/applicationsList/requestModal/RequestModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/api/controllers/idApplicationFormControllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/api/controllers/idApplicationFormControllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/api/models/idApplicationFormModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/api/models/idApplicationFormModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/api/routes/idApplicationFormRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/api/routes/idApplicationFormRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,7 +29,7 @@
     <session id="1005730576">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="1" />
@@ -44,17 +45,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="11" />
+          <entry key="css" value="13" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="1" />
-          <entry key="js" value="16" />
+          <entry key="js" value="28" />
+          <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="11" />
+          <entry key="CSS" value="13" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="16" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="28" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -63,14 +66,14 @@
         <counts>
           <entry key="css" value="1215" />
           <entry key="html" value="2" />
-          <entry key="js" value="4577" />
+          <entry key="js" value="5257" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="1215" />
           <entry key="HTML" value="2" />
-          <entry key="JavaScript" value="4577" />
+          <entry key="JavaScript" value="5257" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -81,23 +84,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/App.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/applicationForm/IdApplicationForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/navbar/NavBar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="25" column="91" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="91" />
+            <state relative-caret-position="68">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -105,23 +96,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="449">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/applicationsList/requestModal/modal.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/applicationForm/applicationForm.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/applicationsList/ApplicationsList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+            <state relative-caret-position="1224">
+              <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/applicationsList/applicationsList.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -129,8 +134,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/applicationsList/requestModal/RequestModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="364">
+              <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,8 +148,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -159,6 +167,7 @@
       <find>pos</find>
       <find>showte</find>
       <find>link</find>
+      <find>userData</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\recka\Desktop\projects\identity-card\src\components\applicationForm</dir>
@@ -181,10 +190,18 @@
         <option value="$PROJECT_DIR$/src/components/navbar/NavBar.css" />
         <option value="$PROJECT_DIR$/src/components/navbar/NavBar.js" />
         <option value="$PROJECT_DIR$/src/components/applicationsList/applicationsList.css" />
-        <option value="$PROJECT_DIR$/src/components/applicationForm/IdApplicationForm.js" />
         <option value="$PROJECT_DIR$/src/components/applicationsList/requestPerview/RequestPerview.js" />
+        <option value="$PROJECT_DIR$/src/config.js" />
+        <option value="$PROJECT_DIR$/src/service/restApiService.js" />
+        <option value="$PROJECT_DIR$/src/server/server.js" />
+        <option value="$PROJECT_DIR$/src/server/api/controllers/idApplicationFormControllers.js" />
+        <option value="$PROJECT_DIR$/src/server/api/models/idApplicationFormModel.js" />
+        <option value="$PROJECT_DIR$/src/server/api/routes/idApplicationFormRoutes.js" />
+        <option value="$PROJECT_DIR$/src/components/applicationsList/requestModal/modal.css" />
         <option value="$PROJECT_DIR$/src/components/applicationsList/requestModal/RequestModal.js" />
         <option value="$PROJECT_DIR$/src/components/applicationsList/ApplicationsList.js" />
+        <option value="$PROJECT_DIR$/src/components/applicationForm/IdApplicationForm.js" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -204,10 +221,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="846" />
-    <option name="y" value="5" />
-    <option name="width" value="977" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-12" />
+    <option name="width" value="1120" />
     <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
@@ -260,32 +276,6 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="applicationsList" type="462c0819:PsiDirectoryNode" />
               <item name="requestModal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="identity-card" type="b2602c69:ProjectViewProjectNode" />
-              <item name="identity-card" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="identity-card" type="b2602c69:ProjectViewProjectNode" />
-              <item name="identity-card" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navbar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="identity-card" type="b2602c69:ProjectViewProjectNode" />
-              <item name="identity-card" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="identity-card" type="b2602c69:ProjectViewProjectNode" />
-              <item name="identity-card" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -340,8 +330,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.server" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.server" />
       </list>
     </recent_temporary>
   </component>
@@ -368,28 +358,28 @@
       <workItem from="1537985637825" duration="6277000" />
       <workItem from="1538432415902" duration="1689000" />
       <workItem from="1538466115608" duration="4654000" />
-      <workItem from="1539684781661" duration="32460000" />
+      <workItem from="1539684781661" duration="37177000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80637000" />
+    <option name="totallyTimeSpent" value="85354000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-12" y="0" width="1120" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.19848156" side_tool="true" weight="0.16965227" />
-      <window_info id="npm" order="1" sideWeight="0.20333333" side_tool="true" visible="true" weight="0.16280295" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" sideWeight="0.7966667" visible="true" weight="0.16280295" />
+      <window_info id="npm" order="1" sideWeight="0.20367278" side_tool="true" visible="true" weight="0.28558224" />
+      <window_info content_ui="combo" id="Project" order="2" sideWeight="0.79632723" visible="true" weight="0.28558224" />
       <window_info id="Structure" order="3" sideWeight="0.2" side_tool="true" weight="0.32982087" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.28958786" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.30831409" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.023861172" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.19861431" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -477,19 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/applicationForm/IdApplicationForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="52" column="28" lean-forward="true" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/applicationForm/applicationForm.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/style/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -531,13 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/applicationsList/requestModal/RequestModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/applicationsList/applicationsList.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -545,10 +515,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/registerServiceWorker.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/restApiService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/api/models/idApplicationFormModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/api/controllers/idApplicationFormControllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/config/keys.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/api/routes/idApplicationFormRoutes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/applicationsList/requestModal/RequestModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/applicationsList/requestModal/modal.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/applicationForm/applicationForm.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/applicationsList/ApplicationsList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+        <state relative-caret-position="1224">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="36" selection-end-line="72" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/applicationForm/IdApplicationForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

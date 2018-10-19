@@ -1,24 +1,32 @@
 import React from 'react';
+import './modal.css';
 
-class RequestModal extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         requestData: []
-    //
-    //     }
-    // }
-    // componentDidMount(){
-    //     this.setSate({
-    //         requestData: [...this.state.requestData, this.props.data]
-    //     })
-    // }
-    render(){
-        return(
-            <div>
-                <p>{this.props.data}</p>
+const RequestModal = props => (
+    <React.Fragment>
+        <div className='modal-brand-container'>
+            <div className="form-group modal-content">
+                <div className="text-right">
+                    <button className="modal-close-btn"
+                            onClick={props.closeModal}>
+                        <span className="fa fa-times"></span>
+                    </button>
+                </div>
+                <div>
+                    {props.userData.name}
+                    {props.userData.birthplace}
+                    {props.userData.dateOfApplication}
+                    {props.userData.dateOfBirth}
+                    {props.userData.electronicAddress}
+                    {props.userData.email}
+                    {props.userData.familyName}
+                    {props.userData.flatNumber}
+                    {props.userData.fathersName}
+                    {props.userData.nationality}
+                    {props.userData.street}
+                </div>
             </div>
-        )
-    }
- }
+        </div>
+    </React.Fragment>
+);
+
 export default RequestModal;

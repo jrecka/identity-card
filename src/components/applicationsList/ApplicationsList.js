@@ -1,82 +1,80 @@
 import React from 'react';
-import axios from 'axios';
-import NavBar from '../navbar/NavBar';
 import RequestModal from './requestModal/RequestModal';
+import RestApiService from '../../service/restApiService';
 
-export default class ApplicationsList extends React.Component{
-    constructor(props){
+export default class ApplicationsList extends React.Component {
+    constructor(props) {
         super(props);
-        this.state={
+        this.state = {
             applicationsList: [],
             showModal: false,
             currentRequest: ''
         }
     }
+
     componentDidMount() {
         this.getSelectedApplications();
     }
 
     getSelectedApplications = () => {
-        axios.get('http://localhost:4000/tasks')
-        .then( res => res.data.map(response => {
-                  this.setState({
-                applicationsList: [...this.state.applicationsList, response]
-            });
-            
-        })
-    )
-    .catch(error => console.log(error));
-    }
+        RestApiService.findSelectedApplications()
+            .then(response => {
+                this.setState({
+                    applicationsList: response.data
+                });
+            })
+            .catch(error => console.log(error));
+    };
+
+    toggleModalAndSetName = data => {
+        this.state.userData = data;
+        this.toggleModal();
+    };
 
     toggleModal = () => {
         this.setState({
-            showModal: !this.state.showModal
-        })
-    }
-    showModal = () => {
-        this.toggleModal()
-    }
-    render(){
-        return(<div>
-            <NavBar/>
-            <div className="container list-page">
-                        <div className="row list">
-                            <table className="col-md-12">
-                                 <thead>
-                                    <tr>
-                                        <th scope="col">Date of application</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Surname</th>
-                                        <th scope="col"></th>
+            showModal: !this.state.showModal,
+        });
+    };
 
-                                        {/*<th scope="col"></th>*/}
+    render() {
+        return (
+            <React.Fragment>
+                {this.state.showModal ? <RequestModal
+                    userData={this.state.userData}
+                    closeModal={this.toggleModal}/> : null}
+                <div className="container list-page">
+                    <div className="row list">
+                        <table className="col-md-12">
+                            <thead>
+                            <tr>
+                                <th scope="col">Date of application</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Surname</th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {this.state.applicationsList.map((data, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{data.dateOfApplication}</td>
+                                        <td>{data.name}</td>
+                                        <td>{data.surname}</td>
+                                        <td>
+                                            <button onClick={() => this.toggleModalAndSetName(data)}>
+                                                <i className="fas fa-search-plus"></i>
+                                            </button>
+                                        </td>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                    {this.state.applicationsList.map((data, index) => {
-                                        return (
-                                            <tr key={index}>
-                                                <td>{data.dateOfApplication}</td>
-                                                <td>{data.name}</td>
-                                                <td>{data.surname}</td>
-                                                <td>
-                                                    <button>
-                                                        <i class="fas fa-search-plus"></i>
-                                                        onClick={this.showModal()}
-                                                    </button>
-                                                    {this.state.showModal ? <RequestModal
-                                                        data={data.name}/> : null}
-
-                                                </td>
-                                            </tr>
-                                        )
-                                    }).reverse()
-                                    }
-                                    </tbody>
-                                </table>
-                        </div>
+                                )
+                            }).reverse()
+                            }
+                            </tbody>
+                        </table>
                     </div>
-            </div>
+                </div>
+            </React.Fragment>
         )
     }
-    }
+}
