@@ -62,7 +62,8 @@ export default class ApplicationsList extends React.Component {
                                         <td>{data.name}</td>
                                         <td>{data.surname}</td>
                                         <td>
-                                            <button onClick={() => this.toggleModalAndSetName(data)}>
+                                            <button onClick={() => this.toggleModalAndSetName(data)}
+                                                    className='btn btn-secondary btn-margin'>
                                                 <i className="fas fa-search-plus"></i>
                                             </button>
                                         </td>

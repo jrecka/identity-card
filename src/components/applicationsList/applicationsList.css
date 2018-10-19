@@ -1,27 +1,36 @@
-tr{
+tr {
      color: #d7d7d7;
 }
-th{
+
+th {
     background-color: #3a3a3a;
     padding: 0.5rem 0;
 }
-th:first-child{
+
+th:first-child {
     border-radius: 10px 0 0 0;
 }
-th:last-child{
+
+th:last-child {
     border-radius: 0 10px 0 0;
 }
 
-td{
+td {
     width: 33.333%;
     color: #3a3a3a;
     padding: 0.4rem 0;
     background-color: #dadadb;
     border-bottom: 1px solid
 }
-.list-page{
+
+.list-page {
     margin-top: 1%;
 }
-.list{
+
+.list {
     margin-top: 2%;
+}
+
+.btn-margin {
+    margin-right: 1rem;
 }

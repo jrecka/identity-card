@@ -184,10 +184,12 @@ class IdApplicationForm extends React.Component {
                                 <label>
                                     Date of birth
                                 </label>
-                                <DatePicker
+                                <input
+                                    type='date'
+                                    className='form-control'
                                     value={this.state.dateOfBirth}
                                     onChange={this.handleChangeDatePicker}
-                                />
+                                ></input>
                             </div>
 
                             <div className='form-group'>

@@ -1,28 +1,19 @@
 import React from 'react';
 import './modal.css';
+import UserData from './userData/UserData';
 
 const RequestModal = props => (
     <React.Fragment>
         <div className='modal-brand-container'>
             <div className="form-group modal-content">
                 <div className="text-right">
-                    <button className="modal-close-btn"
+                    <button className="btn btn-secondary"
                             onClick={props.closeModal}>
                         <span className="fa fa-times"></span>
                     </button>
                 </div>
                 <div>
-                    {props.userData.name}
-                    {props.userData.birthplace}
-                    {props.userData.dateOfApplication}
-                    {props.userData.dateOfBirth}
-                    {props.userData.electronicAddress}
-                    {props.userData.email}
-                    {props.userData.familyName}
-                    {props.userData.flatNumber}
-                    {props.userData.fathersName}
-                    {props.userData.nationality}
-                    {props.userData.street}
+                    <UserData userData={props.userData}/>
                 </div>
             </div>
         </div>
